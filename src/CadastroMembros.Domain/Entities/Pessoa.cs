@@ -21,8 +21,8 @@ namespace CadastroMembros.Domain.Entities
         public string? Bairro { get; set; }
         public string? Telefone { get; set; }
         public string? Ministerio { get; set; }
-        public DateTime? DataCadastro { get; set; }
-        public bool? Ativo { get; set; }
+        public DateTime? DataCadastro { get; set; } = DateTime.Now;
+        public bool? Ativo { get; set; } = true;
 
         #region Enums
 

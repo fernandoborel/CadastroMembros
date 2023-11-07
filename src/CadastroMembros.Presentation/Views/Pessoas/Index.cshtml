@@ -1,1 +1,93 @@
-﻿<h1>Olá</h1>
+﻿@model IEnumerable<PessoaViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Membros";
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<div class="create-new">
+    <a asp-action="Create" class="btn btn-primary" role="button">Cadastrar Membro</a>
+</div>
+
+<br />
+<br />
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-dismissible alert-primary">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<table class="table" id="table-paciente">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoCivil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vinculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoCivil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vinculo)
+                </td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input custom-checkbox" type="checkbox" id="ativoCheckbox" readonly @(item.Ativo ? "checked" : "")>
+                    </div>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

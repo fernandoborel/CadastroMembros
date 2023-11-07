@@ -1,0 +1,129 @@
+﻿@using CadastroMembros.Domain.Enums;
+@model PessoaViewModel
+ 
+@{
+    ViewData["Title"] = "Editar Membro";
+}
+ 
+<div class="text-center">
+ 
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+ 
+<form asp-controller="Pessoas" asp-action="Edit" method="post">
+ 
+    <input type="hidden" asp-for="Id" />
+ 
+    <div class="form-group">
+        <label asp-for="Nome" class="control-label"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cpf" class="control-label"></label>
+        <input asp-for="Cpf" class="form-control" />
+        <span asp-validation-for="Cpf" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Sexo" class="control-label"></label>
+        <select asp-for="Sexo" asp-items="Html.GetEnumSelectList<Sexo>()" class="form-control">
+            <option value="">Selecione o sexo</option>
+        </select>
+        <span asp-validation-for="Sexo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EstadoCivil" class="control-label"></label>
+        <select asp-for="EstadoCivil" asp-items="Html.GetEnumSelectList<EstadoCivil>()" class="form-control">
+            <option value="">Selecione o estado civil</option>
+        </select>
+        <span asp-validation-for="Sexo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataNascimento" class="control-label"></label>
+        <input type="date" asp-for="DataNascimento" class="form-control" />
+        <span asp-validation-for="DataNascimento" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OndeTrabalha" class="control-label"></label>
+        <input asp-for="OndeTrabalha" class="form-control" />
+        <span asp-validation-for="OndeTrabalha" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cargo" class="control-label"></label>
+        <input asp-for="Cargo" class="form-control" />
+        <span asp-validation-for="Cargo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Pais" class="control-label"></label>
+        <input asp-for="Pais" class="form-control" />
+        <span asp-validation-for="Pais" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Estado" class="control-label"></label>
+        <input asp-for="Estado" class="form-control" />
+        <span asp-validation-for="Estado" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cidade" class="control-label"></label>
+        <input asp-for="Cidade" class="form-control" />
+        <span asp-validation-for="Cidade" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cep" class="control-label"></label>
+        <input asp-for="Cep" class="form-control" />
+        <span asp-validation-for="Cep" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Logradouro" class="control-label"></label>
+        <input asp-for="Logradouro" class="form-control" />
+        <span asp-validation-for="Logradouro" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Numero" class="control-label"></label>
+        <input type="number" min="0" asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Complemento" class="control-label"></label>
+        <input asp-for="Complemento" class="form-control" />
+        <span asp-validation-for="Complemento" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bairro" class="control-label"></label>
+        <input asp-for="Bairro" class="form-control" />
+        <span asp-validation-for="Bairro" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Telefone" class="control-label"></label>
+        <input asp-for="Telefone" class="form-control" />
+        <span asp-validation-for="Telefone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Vinculo" class="control-label"></label>
+        <select asp-for="Vinculo" asp-items="Html.GetEnumSelectList<Vinculo>()" class="form-control">
+            <option value="">Selecione o vinculo</option>
+        </select>
+        <span asp-validation-for="Vinculo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Ministerio" class="control-label"></label>
+        <input asp-for="Ministerio" class="form-control" />
+        <span asp-validation-for="Ministerio" class="text-danger"></span>
+    </div>
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+        </label>
+    </div>
+    <br />
+    <br />
+    <div class="d-grid gap-2">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-info">Voltar</a>
+    </div>
+</form>

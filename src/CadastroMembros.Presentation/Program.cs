@@ -1,13 +1,13 @@
-using CadastroMembros.Infra.Data.Context;
-using Microsoft.EntityFrameworkCore;
+using CadastroMembros.Presentation;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // configurar para MVC
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<MembrosContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BDMembros")));
+Setup.AddEntityFrameworkServices(builder);
+Setup.AddRegisterServices(builder);
+Setup.AddAutoMapperServices(builder);
 
 var app = builder.Build();
 
