@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMembros.Presentation", "CadastroMembros.Presentation\CadastroMembros.Presentation.csproj", "{78A5ACDD-B8C2-4DE0-BC8E-2CD8BEF9D887}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroMembros.Presentation", "CadastroMembros.Presentation\CadastroMembros.Presentation.csproj", "{78A5ACDD-B8C2-4DE0-BC8E-2CD8BEF9D887}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Presentation", "1- Presentation", "{355D5EEE-E447-43A1-84FB-8900BAEA05A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Application", "2- Application", "{8B365883-8C45-432E-8217-A9FB274C8366}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Domain", "3- Domain", "{44763BB1-21AC-46FC-8721-4EFF22B3B32C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMembros.Application", "CadastroMembros.Application\CadastroMembros.Application.csproj", "{CAE73548-EE22-490B-8F01-73C303DD2001}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Infra", "4- Infra", "{D6B7C56C-3CA7-42EC-BE7F-3439FB1D781C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMembros.Domain", "CadastroMembros.Domain\CadastroMembros.Domain.csproj", "{E6A0D722-E254-4E52-BADA-CCC051F1CDC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMembros.Infra.Data", "CadastroMembros.Infra\CadastroMembros.Infra.Data.csproj", "{F6E50489-72D2-4A59-AE19-5E87DA849A5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +29,27 @@ Global
 		{78A5ACDD-B8C2-4DE0-BC8E-2CD8BEF9D887}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78A5ACDD-B8C2-4DE0-BC8E-2CD8BEF9D887}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78A5ACDD-B8C2-4DE0-BC8E-2CD8BEF9D887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE73548-EE22-490B-8F01-73C303DD2001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE73548-EE22-490B-8F01-73C303DD2001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE73548-EE22-490B-8F01-73C303DD2001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE73548-EE22-490B-8F01-73C303DD2001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A0D722-E254-4E52-BADA-CCC051F1CDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A0D722-E254-4E52-BADA-CCC051F1CDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A0D722-E254-4E52-BADA-CCC051F1CDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A0D722-E254-4E52-BADA-CCC051F1CDC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E50489-72D2-4A59-AE19-5E87DA849A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E50489-72D2-4A59-AE19-5E87DA849A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E50489-72D2-4A59-AE19-5E87DA849A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E50489-72D2-4A59-AE19-5E87DA849A5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78A5ACDD-B8C2-4DE0-BC8E-2CD8BEF9D887} = {355D5EEE-E447-43A1-84FB-8900BAEA05A2}
+		{CAE73548-EE22-490B-8F01-73C303DD2001} = {8B365883-8C45-432E-8217-A9FB274C8366}
+		{E6A0D722-E254-4E52-BADA-CCC051F1CDC3} = {44763BB1-21AC-46FC-8721-4EFF22B3B32C}
+		{F6E50489-72D2-4A59-AE19-5E87DA849A5E} = {D6B7C56C-3CA7-42EC-BE7F-3439FB1D781C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F371C08B-2DCB-49A4-B89B-41208D3179A1}

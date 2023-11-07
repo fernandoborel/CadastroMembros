@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroMembros.Application\CadastroMembros.Application.csproj" />
+    <ProjectReference Include="..\CadastroMembros.Domain\CadastroMembros.Domain.csproj" />
+    <ProjectReference Include="..\CadastroMembros.Infra\CadastroMembros.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>
