@@ -1,7 +1,13 @@
+using CadastroMembros.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// configurar para MVC
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MembrosContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BDMembros")));
 
 var app = builder.Build();
 
@@ -18,6 +24,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}");
 
 app.Run();
