@@ -3,7 +3,7 @@
     public enum Vinculo
     {
         Membro = 1,
-        NaoMembro = 2,
+        Congregado = 2,
         Visitante = 3,
     }
 }

@@ -15,7 +15,7 @@ namespace CadastroMembros.Application.ViewModel
         public string? Email { get; set; }
 
         [Required(ErrorMessage = "O CPF é obrigatório")]
-        [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF deve conter 11 caracteres")]
+        [StringLength(14, MinimumLength = 11, ErrorMessage = "O CPF deve conter 11 caracteres")]
         public string? Cpf { get; set; }
 
         [Required(ErrorMessage = "A Data de Nascimento é obrigatória")]
@@ -27,12 +27,14 @@ namespace CadastroMembros.Application.ViewModel
         public string? Pais { get; set; }
 
         [Required(ErrorMessage = "O Estado é obrigatório")]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "O Estado deve conter 2 caracteres")]
         public string? Estado { get; set; }
 
         [Required(ErrorMessage = "A Cidade é obrigatória")]
         public string? Cidade { get; set; }
 
         [Required(ErrorMessage = "O CEP é obrigatório")]
+        [StringLength(9, MinimumLength = 8, ErrorMessage = "O CEP deve conter 8 caracteres")]
         public string? Cep { get; set; }
 
         [Required(ErrorMessage = "O Logradouro é obrigatório")]
