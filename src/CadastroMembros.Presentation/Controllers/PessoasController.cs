@@ -76,5 +76,11 @@ namespace CadastroMembros.Presentation.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> ExibirDados(int id)
+        {
+            var pessoaVm = await _pessoaAppService.ObterPessoaPorIdAsync(id);
+            return View(pessoaVm);
+        }
     }
 }

@@ -2,3 +2,8 @@
     height: 50px;
     max-width: auto;
 }
+
+.pLabel{
+    border: 1px solid #ddd;
+    padding: 7px;
+}
