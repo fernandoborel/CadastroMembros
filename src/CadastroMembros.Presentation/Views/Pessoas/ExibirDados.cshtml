@@ -3,7 +3,6 @@
 
 <input type="hidden" asp-for="Id" />
 
-
 <div class="row mb-3">
     <div class="col-md-6">
         <p class="lead pLabel">Nome: <span>@Model.Nome</span></p>
@@ -12,65 +11,71 @@
         <p class="lead pLabel">E-mail: <span>@Model.Email</span></p>
     </div>
     <div class="form-group col-md-4">
-        <p class="lead pLabel">Nome: <span>@Model.Cpf</span></p>
+        <p class="lead pLabel">CPF: <span>@Model.Cpf</span></p>
     </div>
     <div class="form-group col-md-4">
-        <p class="lead pLabel">Nome: <span>@Model.Sexo</span></p>
+        <p class="lead pLabel">Sexo: <span>@Model.Sexo</span></p>
     </div>
     <div class="form-group col-md-4">
-        <p class="lead pLabel">Nome: <span>@Model.EstadoCivil</span></p>
+        <p class="lead pLabel">Estado Civil: <span>@Model.EstadoCivil (a)</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Data de Nascimento: <span>@Model.DataNascimento</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Empresa: <span>@Model.OndeTrabalha</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Cargo: <span>@Model.Cargo</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">País: <span>@Model.Pais</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Estado: <span>@Model.Estado</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Cidade: <span>@Model.Cidade</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">CEP: <span>@Model.Cep</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Logradouro: <span>@Model.Logradouro</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">N°: <span>@Model.Numero</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Complemento: <span>@Model.Complemento</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Bairro: <span>@Model.Bairro</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">(21) <span>@Model.Telefone</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Vínculo: <span>@Model.Vinculo</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Ministério: <span>@Model.Ministerio</span></p>
+    </div>
+    <div class="form-group col-md-4">
+        <p class="lead pLabel">Data de cadastro: <span>@Model.DataCadastro</span></p>
+    </div>
+    <div class="form-group">
+        @if(Model.Ativo == true)
+        {
+            <p class="lead">Ativo: <span class="text-success">Sim</span></p>
+        }
+        else
+        {
+            <p class="lead">Ativo: <span class="text-danger">Não</span></p>
+        }
     </div>
 </div>
 
-@* <div class="form-group">
-    <p class="lead">Nome: <span>@Model.DataNascimento</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.OndeTrabalha</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Cargo</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Pais</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Estado</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Cidade</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Cep</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Logradouro</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Numero</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Complemento</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Bairro</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Telefone</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Vinculo</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Ministerio</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.DataCadastro</span></p>
-</div>
-<div class="form-group">
-    <p class="lead">Nome: <span>@Model.Ativo</span></p>
-</div>
- *@
 <div class="d-grid gap-2 mt-5">
     <a asp-action="Index" class="btn btn-info">Voltar</a>
 </div>
