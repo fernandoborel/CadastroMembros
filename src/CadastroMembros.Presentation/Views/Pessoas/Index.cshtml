@@ -13,22 +13,6 @@
 <br />
 <br />
 
-@if (TempData["MensagemSucesso"] != null)
-{
-    <div class="alert alert-dismissible alert-success">
-        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
-        @TempData["MensagemSucesso"]
-    </div>
-}
-
-@if (TempData["MensagemErro"] != null)
-{
-    <div class="alert alert-dismissible alert-primary">
-        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
-        @TempData["MensagemErro"]
-    </div>
-}
-
 <table class="table table-hover" id="table-membros">
     <thead>
         <tr>

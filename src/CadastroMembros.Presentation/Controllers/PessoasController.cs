@@ -30,7 +30,7 @@ namespace CadastroMembros.Presentation.Controllers
             if (ModelState.IsValid)
             {
                 await _pessoaAppService.CriarPessoaAsync(pessoaVm);
-                TempData["MensagemSuccesso"] = "Membro criado com sucesso!";
+                TempData["MensagemSucesso"] = "Membro criado com sucesso!";
                 return RedirectToAction(nameof(Index));
             }
             TempData["MensagemErro"] = "Erro ao cadastrar o membro!";
@@ -49,7 +49,7 @@ namespace CadastroMembros.Presentation.Controllers
             if (ModelState.IsValid)
             {
                 await _pessoaAppService.AtualizarPessoaAsync(pessoaVm);
-                TempData["MensagemSuccesso"] = "Membro atualizado com sucesso!";
+                TempData["MensagemSucesso"] = "Membro atualizado com sucesso!";
                 return RedirectToAction(nameof(Index));
             }
             return View(pessoaVm);
@@ -67,7 +67,7 @@ namespace CadastroMembros.Presentation.Controllers
             try
             {
                 await _pessoaAppService.ExcluirPessoaAsync(id);
-                TempData["MensagemSuccesso"] = "Membro removido com sucesso!";
+                TempData["MensagemSucesso"] = "Membro removido com sucesso!";
             }
             catch (Exception e)
             {

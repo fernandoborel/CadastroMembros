@@ -19,6 +19,7 @@ namespace CadastroMembros.Application.ViewModel
         public string? Cpf { get; set; }
 
         [Required(ErrorMessage = "A Data de Nascimento é obrigatória")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataNascimento { get; set; }
         public string? OndeTrabalha { get; set; }
         public string? Cargo { get; set; }
@@ -46,8 +47,12 @@ namespace CadastroMembros.Application.ViewModel
 
         [Required(ErrorMessage = "O Bairro é obrigatório")]
         public string? Bairro { get; set; }
+
+        [MaxLength(11, ErrorMessage = "O Telefone deve conter no máximo 11 caracteres")]
         public string? Telefone { get; set; }
         public string? Ministerio { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataCadastro { get; set; } = DateTime.Now;
         public bool Ativo { get; set; } = true;
 

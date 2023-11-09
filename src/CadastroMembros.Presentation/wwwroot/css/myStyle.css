@@ -7,3 +7,7 @@
     border: 1px solid #ddd;
     padding: 7px;
 }
+
+.aNavHover:hover {
+    color: #fcb036 !important;
+}
