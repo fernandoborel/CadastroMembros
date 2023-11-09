@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\imprimir.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\imprimir.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CadastroMembros.Application\CadastroMembros.Application.csproj" />
     <ProjectReference Include="..\CadastroMembros.Domain\CadastroMembros.Domain.csproj" />
     <ProjectReference Include="..\CadastroMembros.Infra\CadastroMembros.Infra.Data.csproj" />

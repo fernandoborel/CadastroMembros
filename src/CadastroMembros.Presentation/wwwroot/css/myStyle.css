@@ -11,3 +11,22 @@
 .aNavHover:hover {
     color: #fcb036 !important;
 }
+
+.inputAtivo{
+    margin-top: 5px;
+    margin-left: 11px;
+}
+
+/*estilos para impressão*/
+@media print {
+    body{
+        margin-top: 0px;
+    }
+
+    header,
+    .membroAtivo,
+    .footer,
+    .btnImprimir {
+        display: none;
+    }
+}
