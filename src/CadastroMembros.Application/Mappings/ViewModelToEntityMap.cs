@@ -10,6 +10,8 @@ namespace CadastroMembros.Application.Mappings
         {
             CreateMap<PessoaViewModel, Pessoa>();
             CreateMap<Pessoa, PessoaViewModel>();
+
+            CreateMap<Usuario, UsuarioViewModel>();
         }
     }
 }
