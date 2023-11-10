@@ -23,6 +23,10 @@ namespace CadastroMembros.Presentation
             builder.Services.AddTransient<IPessoaAppService, PessoaAppService>();
             builder.Services.AddTransient<IPessoaDomainService, PessoaDomainService>();
             builder.Services.AddTransient<IPessoaRepository, PessoaRepository>();
+
+            builder.Services.AddTransient<IUsuarioAppService, UsuarioAppService>();
+            builder.Services.AddTransient<IUsuarioDomainService, UsuarioDomainService>();
+            builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
         }
 
         public static void AddAutoMapperServices(this WebApplicationBuilder builder)
