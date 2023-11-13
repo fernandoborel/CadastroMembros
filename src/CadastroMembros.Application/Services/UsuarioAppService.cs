@@ -16,11 +16,11 @@ namespace CadastroMembros.Application.Services
             _usuarioDomainService = usuarioDomainService;
             _mapper = mapper;
         }
-        public async Task<UsuarioViewModel> CriarUsuarioAsync(UsuarioViewModel usuarioVw)
+        public async Task<RegisterViewModel> CriarUsuarioAsync(RegisterViewModel usuarioVw)
         {
             var usuario = _mapper.Map<Usuario>(usuarioVw);
             var usuarioCriado = await _usuarioDomainService.AdicionarAsync(usuario);
-            return _mapper.Map<UsuarioViewModel>(usuarioCriado);
+            return _mapper.Map<RegisterViewModel>(usuarioCriado);
         } 
 
         public void Dispose()

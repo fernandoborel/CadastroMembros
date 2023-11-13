@@ -8,6 +8,17 @@ namespace CadastroMembros.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Pessoa> builder)
         {
+
+            #region Campos únicos
+
+            builder.HasIndex(e => e.Cpf)
+                   .IsUnique();
+
+            builder.HasIndex(e => e.Email)
+                   .IsUnique();
+
+            #endregion
+
             builder.Property(e => e.Bairro).HasMaxLength(50);
 
             builder.Property(e => e.Cargo).HasMaxLength(50);
@@ -18,15 +29,11 @@ namespace CadastroMembros.Infra.Data.Mappings
 
             builder.Property(e => e.Cidade).HasMaxLength(50);
 
-            builder.Property(e => e.Complemento).HasMaxLength(50);
-
-            builder.Property(e => e.Cpf).HasMaxLength(14);
+            builder.Property(e => e.Complemento).HasMaxLength(50);            
 
             builder.Property(e => e.DataCadastro).HasColumnType("datetime");
 
             builder.Property(e => e.DataNascimento).HasColumnType("date");
-
-            builder.Property(e => e.Email).HasMaxLength(100);
 
             builder.Property(e => e.Estado).HasMaxLength(2);
 

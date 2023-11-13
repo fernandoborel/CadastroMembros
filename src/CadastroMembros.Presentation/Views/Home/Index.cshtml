@@ -1,8 +1,165 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model DashboardViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row mb-3">
+    <div class="col-md-12">
+        <h1>Membros cadastrados: @Model.TotalMembrosCadastrados</h1>
+    </div>
 </div>
+
+
+<div class="row mb-2">
+    <div class="col-md-6">
+        <strong>Quantidade de membros por vinculo:</strong>
+    </div>
+    <div class="col-md-6">
+        <strong>Quantidade de eventos ativos e inativos:</strong>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-2">
+        <div class="card card-body bg-danger text-white">
+            <div class="row">
+                <div class="col-md-9">
+                    Membros:
+                </div>
+                <div class="col-md-3">
+                    <h5><strong>@Model.TotalMembros</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card card-body bg-warning text-white">
+            <div class="row">
+                <div class="col-md-9">
+                    Congregado:
+                </div>
+                <div class="col-md-3">
+                    <h5><strong>@Model.TotalCongregados</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card card-body bg-success text-white">
+            <div class="row">
+                <div class="col-md-9">
+                    Visitantes:
+                </div>
+                <div class="col-md-3">
+                    <h5><strong>@Model.TotalVisitantes</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-body text-white" style="background-color: #00008b;">
+            <div class="row">
+                <div class="col-md-9">
+                    Homens:
+                </div>
+                <div class="col-md-3">
+                    <h5><strong>@Model.TotalHomens</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-body text-white" style="background-color: #ff69b4;">
+            <div class="row">
+                <div class="col-md-9">
+                    Mulheres:
+                </div>
+                <div class="col-md-3">
+                    <h5><strong>@Model.TotalMulheres</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Graficos -->
+<div class="row mb-5">
+    <div class="col-md-6">
+        <div id="graficoMembros"></div>
+    </div>
+    <div class="col-md-6">
+        <div id="graficoSexo"></div>
+    </div>
+</div>
+
+<!-- HighCharts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script>
+
+    //Gráfico de eventos por prioridade
+    var arrayMembros = [];
+
+    arrayMembros.push(['MEMBROS', @Model.TotalMembros]);
+    arrayMembros.push(['CONGREGADOS', @Model.TotalCongregados]);
+    arrayMembros.push(['VISITANTES', @Model.TotalVisitantes]);
+
+    new Highcharts.Chart({
+        chart: {
+            type: 'pie',
+            renderTo: 'graficoMembros'
+        },
+        title: {
+            text: 'Quantidade de membros no sistema'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: '60%',
+                dataLabels: {
+                    enable: true
+                },
+                showInLegend: true
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: arrayMembros
+        }],
+        colors: ['#d9534f', '#f0ad4e', '#5cb85c']
+    });
+
+    //Gráfico de sexos
+    var arraySexos = [];
+
+    arraySexos.push(['HOMENS', @Model.TotalHomens]);
+    arraySexos.push(['MULHERES', @Model.TotalMulheres]);
+
+    new Highcharts.Chart({
+        chart: {
+            type: 'pie',
+            renderTo: 'graficoSexo'
+        },
+        title: {
+            text: 'Quantidade de Homens / Mulheres'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: '60%',
+                dataLabels: {
+                    enable: true
+                },
+                showInLegend: true
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: arraySexos
+        }],
+        colors: ['#00008b', '#ff69b4']
+    });
+
+</script>

@@ -29,10 +29,17 @@ namespace CadastroMembros.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(pessoaVm.Cpf != null)
+                {
+                    TempData["MensagemErro"] = "CPF já cadastrado!";
+                    return View(pessoaVm);
+                }
+
                 await _pessoaAppService.CriarPessoaAsync(pessoaVm);
                 TempData["MensagemSucesso"] = "Membro criado com sucesso!";
                 return RedirectToAction(nameof(Index));
             }
+            
             TempData["MensagemErro"] = "Erro ao cadastrar o membro!";
             return View(pessoaVm);
         }

@@ -12,6 +12,9 @@ namespace CadastroMembros.Application.Mappings
             CreateMap<Pessoa, PessoaViewModel>();
 
             CreateMap<Usuario, UsuarioViewModel>();
+
+            CreateMap<RegisterViewModel, Usuario>();
+            CreateMap<Usuario, RegisterViewModel>();
         }
     }
 }

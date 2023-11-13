@@ -1,6 +1,7 @@
 ﻿using CadastroMembros.Domain.Entities;
 using CadastroMembros.Domain.Interfaces.Repositories;
 using CadastroMembros.Infra.Data.Context;
+using CadastroMembros.Infra.Data.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace CadastroMembros.Infra.Data.Repositories
@@ -16,6 +17,8 @@ namespace CadastroMembros.Infra.Data.Repositories
 
         public async Task<Usuario> CreateAsync(Usuario usuario)
         {
+            usuario.Senha = CriptografiaUtil.GetMD5(usuario.Senha);
+
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
             return usuario;
@@ -33,8 +36,10 @@ namespace CadastroMembros.Infra.Data.Repositories
 
         public async Task<Usuario> GetByLoginESenhaAsync(string login, string senha)
         {
+            var senhaCriptografada = CriptografiaUtil.GetMD5(senha);
+
             return await _context.Usuarios
-                .FirstOrDefaultAsync(x => x.Login.Equals(login) && x.Senha.Equals(senha));
+                .FirstOrDefaultAsync(x => x.Login.Equals(login) && x.Senha.Equals(senhaCriptografada));
         }
     }
 }
