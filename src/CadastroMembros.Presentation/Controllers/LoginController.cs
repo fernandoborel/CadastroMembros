@@ -32,7 +32,7 @@ namespace CadastroMembros.Presentation.Controllers
                 if (usuario != null)
                 {
                     TempData["MensagemSucesso"] = "Login efetuado com sucesso!";
-                    return RedirectToAction("Index", "Pessoas");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -46,11 +46,12 @@ namespace CadastroMembros.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(UsuarioViewModel usuarioVm)
+        public async Task<IActionResult> Register(RegisterViewModel usuarioVm)
         {
             if (ModelState.IsValid)
             {
-                //if(await _usuarioAppService.ObterPorEmail(usuarioVm.Email) != null)
+                //DESCOMENTAR QUANDO FINALIZAR O PROJETO
+                //if (await _usuarioAppService.ObterPorEmail(usuarioVm.Email) != null)
                 //{
                 //    TempData["MensagemErro"] = "E-mail já cadastrado!";
                 //    return View(usuarioVm);
