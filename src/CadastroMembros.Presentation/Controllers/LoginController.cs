@@ -1,6 +1,9 @@
 ﻿using CadastroMembros.Application.Interfaces;
 using CadastroMembros.Application.ViewModel;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace CadastroMembros.Presentation.Controllers
 {
@@ -31,8 +34,22 @@ namespace CadastroMembros.Presentation.Controllers
                 var usuario = await _usuarioAppService.ObterPorLoginESenha(usuarioVm.Login, usuarioVm.Senha);
                 if (usuario != null)
                 {
+                    //Cookie
+                    var identity = new ClaimsIdentity(
+                            new[] { new Claim(ClaimTypes.Name, usuario.Login) },
+                            CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    var principal = new ClaimsPrincipal(identity);
+                    await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        principal);
+
                     TempData["MensagemSucesso"] = "Login efetuado com sucesso!";
                     return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Acesso negado. Usuário inválido.";
                 }
             }
 
@@ -65,8 +82,11 @@ namespace CadastroMembros.Presentation.Controllers
             return View(usuarioVm);
         }
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
+            // Destruir o cookie de autenticação do usuário
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
             return RedirectToAction("Login", "Login");
         }
     }

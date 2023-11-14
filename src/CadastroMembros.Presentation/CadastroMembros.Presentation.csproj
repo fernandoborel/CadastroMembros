@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CadastroMembros.Application\CadastroMembros.Application.csproj" />
     <ProjectReference Include="..\CadastroMembros.Domain\CadastroMembros.Domain.csproj" />
     <ProjectReference Include="..\CadastroMembros.Infra\CadastroMembros.Infra.Data.csproj" />

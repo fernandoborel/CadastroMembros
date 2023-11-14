@@ -2,11 +2,13 @@
 using CadastroMembros.Application.ViewModel;
 using CadastroMembros.Domain.Enums;
 using CadastroMembros.Presentation.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace CadastroMembros.Presentation.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IPessoaAppService _pessoaAppService;

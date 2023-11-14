@@ -1,9 +1,11 @@
 ﻿using CadastroMembros.Application.Interfaces;
 using CadastroMembros.Application.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CadastroMembros.Presentation.Controllers
 {
+    [Authorize]
     public class PessoasController : Controller
     {
         private readonly IPessoaAppService _pessoaAppService;
