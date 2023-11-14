@@ -6,6 +6,7 @@ using CadastroMembros.Domain.Interfaces.Services;
 using CadastroMembros.Domain.Services;
 using CadastroMembros.Infra.Data.Context;
 using CadastroMembros.Infra.Data.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 namespace CadastroMembros.Presentation
@@ -32,6 +33,17 @@ namespace CadastroMembros.Presentation
         public static void AddAutoMapperServices(this WebApplicationBuilder builder)
         {
             builder.Services.AddAutoMapper(typeof(ViewModelToEntityMap));
+        }
+
+        public static void AddCookie(this WebApplicationBuilder builder)
+        {
+            builder.Services.Configure<CookiePolicyOptions>(op => { op.MinimumSameSitePolicy = SameSiteMode.None; });
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.LoginPath = "/Login"; // Rota para a página de login
+                options.AccessDeniedPath = "/AcessoNegado"; // Rota para a página de acesso negado personalizada
+            });
         }
     }
 }

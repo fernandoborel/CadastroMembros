@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,6 +30,21 @@
                             <a class="nav-link text-dark aNavHover" asp-area="" asp-controller="Pessoas" asp-action="Index">Gerenciar Membros</a>
                         </li>
                     </ul>
+                </div>
+                <form class="d-flex">
+                    <span class="text-dark">Bem vindo, </span>
+                    &nbsp;
+                    <strong class="text-dark">
+                        @User.Identity.Name
+                    </strong>
+                    &nbsp;&nbsp;
+                </form>
+                <div class="d-flex justify-content-end align-items-end">
+                    <a class="nav-link btn btn-danger" aria-current="page" href="/Login/Logout">
+                        <span class="text-white">
+                            Sair
+                        </span>
+                    </a>
                 </div>
             </div>
         </nav>
