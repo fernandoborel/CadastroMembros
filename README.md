@@ -25,5 +25,5 @@
 </p>
 
 <p>
-  <strong>Andamento do projeto:</strong> <span>50% concluído</span>
+  <strong>Andamento do projeto:</strong> <span>90% concluído</span>
 </p>
