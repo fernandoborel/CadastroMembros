@@ -67,12 +67,11 @@ namespace CadastroMembros.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                //DESCOMENTAR QUANDO FINALIZAR O PROJETO
-                //if (await _usuarioAppService.ObterPorEmail(usuarioVm.Email) != null)
-                //{
-                //    TempData["MensagemErro"] = "E-mail já cadastrado!";
-                //    return View(usuarioVm);
-                //}
+                if (await _usuarioAppService.ObterPorEmail(usuarioVm.Email) != null)
+                {
+                    TempData["MensagemErro"] = "E-mail já cadastrado!";
+                    return View(usuarioVm);
+                }
 
                 await _usuarioAppService.CriarUsuarioAsync(usuarioVm);
                 TempData["MensagemSucesso"] = "Usuário criado com sucesso!";
