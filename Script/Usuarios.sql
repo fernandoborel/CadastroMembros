@@ -1,0 +1,8 @@
+CREATE TABLE Usuarios (
+    Id INT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Login VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Senha VARCHAR(255) NOT NULL,
+    DataCadastro DATETIME NOT NULL
+);
