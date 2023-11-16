@@ -67,6 +67,9 @@ namespace CadastroMembros.Application.ViewModel
         [Required(ErrorMessage = "O Vínculo é obrigatório")]
         public Vinculo Vinculo { get; set; }
 
+        [Required(ErrorMessage = "O campo batismo é obrigatório")]
+        public Batizado Batizado { get; set; }
+
         #endregion
     }
 }

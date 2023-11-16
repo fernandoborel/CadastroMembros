@@ -12,7 +12,7 @@
         <strong>Quantidade de membros por vinculo:</strong>
     </div>
     <div class="col-md-6">
-        <strong>Quantidade de eventos ativos e inativos:</strong>
+        <strong>Quantidade de homens / mulheres:</strong>
     </div>
 </div>
 
@@ -30,10 +30,10 @@
         </div>
     </div>
     <div class="col-md-2">
-        <div class="card card-body bg-warning text-white">
+        <div class="card card-body text-white" style="background-color: #e8bb00;">
             <div class="row">
                 <div class="col-md-9">
-                    Congregado:
+                    Congregados:
                 </div>
                 <div class="col-md-3">
                     <h5><strong>@Model.TotalCongregados</strong></h5>
@@ -127,7 +127,7 @@
         series: [{
             data: arrayMembros
         }],
-        colors: ['#d9534f', '#f0ad4e', '#5cb85c']
+        colors: ['#d9534f', '#e8bb00', '#5cb85c']
     });
 
     //Gráfico de sexos

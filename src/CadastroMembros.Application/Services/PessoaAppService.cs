@@ -52,5 +52,11 @@ namespace CadastroMembros.Application.Services
             var pessoas = await _pessoaDomainService.BuscarTodosAsync();
             return _mapper.Map<IEnumerable<PessoaViewModel>>(pessoas);
         }
+
+        public async Task<PessoaViewModel> ObterPessoaPorCpfAsync(string cpf)
+        {
+            var cpfValidado = await _pessoaDomainService.BuscarPorCpfAsync(cpf);
+            return _mapper.Map<PessoaViewModel>(cpfValidado);
+        }
     }
 }

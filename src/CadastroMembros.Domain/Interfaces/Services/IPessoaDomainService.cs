@@ -9,5 +9,6 @@ namespace CadastroMembros.Domain.Interfaces.Services
         Task <Pessoa> AdicionarAsync(Pessoa pessoa);
         Task <Pessoa> AtualizarAsync(Pessoa pessoa);
         Task<bool> ExcluirAsync(int id);
+        Task<Pessoa> BuscarPorCpfAsync(string cpf);
     }
 }
