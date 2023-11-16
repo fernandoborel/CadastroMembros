@@ -1,5 +1,7 @@
 ﻿using CadastroMembros.Application.Interfaces;
+using CadastroMembros.Application.Services;
 using CadastroMembros.Application.ViewModel;
+using CadastroMembros.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,7 +33,7 @@ namespace CadastroMembros.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(pessoaVm.Cpf != null)
+                if (await _pessoaAppService.ObterPessoaPorCpfAsync(pessoaVm.Cpf) != null)
                 {
                     TempData["MensagemErro"] = "CPF já cadastrado!";
                     return View(pessoaVm);

@@ -9,5 +9,6 @@ namespace CadastroMembros.Domain.Interfaces.Repositories
         Task <Pessoa> CreateAsync(Pessoa pessoa);
         Task <Pessoa> UpdateAsync(Pessoa pessoa);
         Task <bool> DeleteAsync(int id);
+        Task<Pessoa> GetByCpfAsync(string cpf);
     }
 }

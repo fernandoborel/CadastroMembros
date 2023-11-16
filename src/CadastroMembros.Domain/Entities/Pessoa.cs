@@ -26,9 +26,10 @@ namespace CadastroMembros.Domain.Entities
 
         #region Enums
 
-        public Sexo Sexo { get; set; }
-        public EstadoCivil EstadoCivil { get; set; }
-        public Vinculo Vinculo { get; set; }
+        public Sexo? Sexo { get; set; }
+        public EstadoCivil? EstadoCivil { get; set; }
+        public Vinculo? Vinculo { get; set; }
+        public Batizado? Batizado { get; set; }
 
         #endregion
     }

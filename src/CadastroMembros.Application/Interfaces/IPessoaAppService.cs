@@ -9,5 +9,6 @@ namespace CadastroMembros.Application.Interfaces
         Task<IEnumerable<PessoaViewModel>> ObterTodosAsync();
         Task<PessoaViewModel> AtualizarPessoaAsync(PessoaViewModel pessoaVw);
         Task ExcluirPessoaAsync(int id);
+        Task<PessoaViewModel> ObterPessoaPorCpfAsync(string cpf);
     }
 }

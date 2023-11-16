@@ -42,5 +42,10 @@ namespace CadastroMembros.Domain.Services
         {
             _pessoaRepository.Dispose();
         }
+
+        public async Task<Pessoa> BuscarPorCpfAsync(string cpf)
+        {
+            return await _pessoaRepository.GetByCpfAsync(cpf);
+        }
     }
 }

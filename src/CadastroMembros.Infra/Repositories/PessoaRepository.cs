@@ -43,6 +43,7 @@ namespace CadastroMembros.Infra.Data.Repositories
             pessoaBd.Bairro = pessoa.Bairro;
             pessoaBd.Telefone = pessoa.Telefone;
             pessoaBd.Ministerio = pessoa.Ministerio;
+            pessoaBd.Batizado = pessoa.Batizado;
             pessoaBd.DataCadastro = pessoa.DataCadastro;
             pessoaBd.Ativo = pessoa.Ativo;
             pessoaBd.Sexo = pessoa.Sexo;
@@ -78,6 +79,11 @@ namespace CadastroMembros.Infra.Data.Repositories
         public async Task<Pessoa> GetByIdAsync(int id)
         {
             return await _context.Pessoas.FirstOrDefaultAsync(p => p.Id.Equals(id));
+        }
+
+        public async Task<Pessoa> GetByCpfAsync(string cpf)
+        {
+            return await _context.Pessoas.FirstOrDefaultAsync(p => p.Cpf.Equals(cpf));
         }
     }
 }
