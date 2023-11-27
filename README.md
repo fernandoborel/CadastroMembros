@@ -2,7 +2,7 @@
 
 ## Projeto desenvolvido com .NET 6 (MVC)
 
-### Este projeto está sendo desenvolvido para auxiliar no gerenciamento de membros que constituem a IBA (Igreja Batista Alvorada)
+### Este projeto foi desenvolvido para auxiliar no gerenciamento de membros que constituem a IBA (Igreja Batista Alvorada)
 
 <p>
   <strong>Quais padrões utilizados?</strong>
@@ -25,5 +25,5 @@
 </p>
 
 <p>
-  <strong>Andamento do projeto:</strong> <span>90% concluído</span>
+  <strong>Andamento do projeto:</strong> <span>100% concluído</span>
 </p>
